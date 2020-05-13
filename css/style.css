@@ -72,6 +72,13 @@ body {
   width:90%;
   padding-left: 15px;
   padding-right: 15px;
+  border: 1px solid transparent;
+}
+
+.countryItem:hover {
+  background: #C0C0C0;
+  border: black;
+  border: 1px solid black;
 }
 
 .countryItem ul {
