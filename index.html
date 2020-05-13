@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Coronavirus</title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+  <div class="fullWidth">
+    <div class="center">Coronavirus</div>
+  </div>
+  <div class="fullWidth">
+    <div class="tab" id="allCountries">
+      <div class="center">All</div>
+    </div>
+    <div class="tab" id="favoriteCountries">
+      <div class="center">Favorites</div>
+    </div>
+  </div>
+  <br><br><br><br>
+  <div class="center">
+    <div class="body" id="body"></div>
+  </div>
+</body>
+
+</html>
+
+<script src="js/getData.js"></script>
+<script src="js/listView.js"></script>
+<script src="js/favoriteView.js"></script>
+<script src="js/singleView.js"></script>
+<script>
+  //runs function on load to display list view
+  window.onload=new function() { loadListView()};
+</script>

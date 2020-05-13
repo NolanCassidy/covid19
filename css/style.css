@@ -1,0 +1,143 @@
+/* country name text in all/favorite */
+a {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+/*sets background and base settings*/
+body {
+  background-color: #C0C0C0;
+  margin:0px;
+  overflow-x: hidden;
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+/*  allows for centering within div*/
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  width:90%;
+}
+
+/* used for header and tabs to make full width */
+.fullWidth {
+  text-align: center;
+  background: white;
+  color: black;
+  font-weight: bold;
+  font-size: 30px;
+  width: 100vw;
+  margin-top: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* all/fav tab css */
+.tab {
+  text-align: center;
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 17px;
+  width: 50vw;
+  overflow-x: hidden;
+}
+
+.tab:hover {
+  background-color: #C0C0C0;
+  color:black;
+}
+
+/*  list item in all and favorite */
+.countryItem {
+  border-radius: 25px;
+  background: #f4f4f4;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  float: left;
+  line-height: 38px;
+  width:90%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.countryItem ul {
+  list-style: none;
+}
+
+/* search bar */
+input[type="text"]{
+  font-family: "Lucida Console", Courier, monospace;
+  text-indent: 10px;
+  border-radius: 25px;
+  width: 50vw;
+  height: 30px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+input[type="text"]::placeholder{
+  color: #C0C0C0;
+}
+
+/* sinlge item view */
+.singleItem{
+  border-radius: 25px;
+  background:#f4f4f4;
+  padding-left: 25px;
+  float: left;
+  width: 90%;
+}
+
+/* single view country name */
+.singleItem h2{
+  text-decoration: underline;
+}
+
+/* single view information */
+.singleItem h3{
+  padding-left: 25px;
+}
+
+/* single view back button */
+.goHomeButton{
+  font-family: "Lucida Console", Courier, monospace;
+  font-size: 20px;
+  border-radius: 25px;
+  width: 70px;
+  height: 30px;
+}
+
+/* favorite checkmarks */
+.countryView countrySingle {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.countryView countrySingle.fav:hover:before {
+  content: '\2610  ';
+}
+
+.countryView country.fav:before,
+.countryView countrySingle:hover:before,
+.countryView countrySingle.fav:before {
+  content: '\2611  ';
+  color: black;
+}
+
+.countryView country {
+  cursor: pointer;
+}
