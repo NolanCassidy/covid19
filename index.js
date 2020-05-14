@@ -1,5 +1,5 @@
 // create express server for localhost and testing
-var path = require('path');
+const path = require('path');
 const express = require('express');
 const app = express();
 // accessed at http://localhost:8080/

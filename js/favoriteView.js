@@ -3,11 +3,11 @@
 // Load favorites view
 function loadFavoriteView() {
   //sends request to Coronavirus  api for the data
-  var xhr = getData()
+  const xhr = getData()
   xhr.onload = function() {
     //if request successful
     if (this.status == 200) {
-      var response = JSON.parse(this.responseText);
+      const response = JSON.parse(this.responseText);
       //creates html code for body in index.html
       const favoriteView = `
         ${response.Countries.map(character => `
@@ -31,7 +31,7 @@ function loadFavoriteView() {
 // hide non favorites and apply checkmarks to favorites
 function showFavorites() {
   // retrieve local storage
-  var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
   //hide all countries
   document.querySelectorAll('.countryName').forEach(function(countryName) {
     countryName.style.display = "none";

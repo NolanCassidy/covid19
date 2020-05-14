@@ -3,11 +3,11 @@
 //loads single detailed view
 function loadSingleView(id) {
   //sends request to Coronavirus  api for the data
-  var xhr = getData()
+  const xhr = getData()
   xhr.onload = function() {
     //if request successful
     if (this.status == 200) {
-      var response = JSON.parse(this.responseText);
+      const response = JSON.parse(this.responseText);
       //creates html code for body in index.html
       const singleView = `
         <button id="goHome" class="goHomeButton">Back</button>
@@ -38,7 +38,7 @@ function loadSingleView(id) {
 //apply check mark to all favorited countries and allow toggling
 function showSingle(){
   // retrieve local storage
-  var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
   // apply fav class to all favorites
   favorites.forEach(function(favorite) {
     if (document.getElementById(favorite)) {
@@ -47,9 +47,9 @@ function showSingle(){
   });
   // allow favorite toggle
   document.querySelector('.countryView').addEventListener('click', function(clicked) {
-    var id = clicked.target.id;
-    var item = clicked.target;
-    var index = favorites.indexOf(id);
+    const id = clicked.target.id;
+    const item = clicked.target;
+    const index = favorites.indexOf(id);
     // toggle favorite on/off
     if(index == -1) {
       item.className = 'fav';
