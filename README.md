@@ -2,6 +2,20 @@
 
 Single page Coronavirus tracking application built using vanilla javascript.
 
+[http://nolancassidy.com/covid19](http://nolancassidy.com/covid19)
+
+![Unlocked Demo](flow.gif)
+
+## Features
+
+* COVID19 API Calls
+* List View of all Countries
+* Search Filter
+* Single Detailed View
+* Local Favorite Storage
+* Favorite Tab View
+* Testing with Jest
+
 ## Getting Started
 
 1. download/clone the github repo
@@ -17,6 +31,8 @@ npm start
 ```
 
 4. Project can now be viewed at http://localhost:8080/
+
+Note: If data is not appearing it is because to many requests have been made to the COVID19 API. Please wait a second and try the action again.
 
 ## Running the tests
 
