@@ -50,7 +50,7 @@ npm test
 
 /examples - videos and gifs of working examples
 
-/public - contains the js and css file for running on local hosting
+/public - contains the js and css file for running on local host
 
 index.html is main html File
 
