@@ -2,9 +2,11 @@
 
 Single page Coronavirus tracking application built using vanilla javascript.
 
+![Demo](examples/exampleGif.gif)
+
 [http://nolancassidy.com/covid19](http://nolancassidy.com/covid19)
 
-![Demo](examples/exampleGif.gif)
+Note: If data is not appearing it is because to many requests have been made to the COVID19 API. Please wait a second and try the action again.
 
 ## Features
 
@@ -31,8 +33,6 @@ npm start
 ```
 
 4. Project can now be viewed at http://localhost:8080/
-
-Note: If data is not appearing it is because to many requests have been made to the COVID19 API. Please wait a second and try the action again.
 
 ## Running the tests
 
