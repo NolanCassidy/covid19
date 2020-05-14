@@ -6,3 +6,6 @@ function getData() {
   xhr.open('GET', 'https://api.covid19api.com/summary', true);
   return xhr
 }
+
+const testData = () => getData().status;
+module.exports = testData;

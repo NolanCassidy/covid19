@@ -4,7 +4,8 @@
   "description": "Coronavirus Single Page Application",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/NolanCassidy/covid19/issues"
   },
-  "homepage": "https://github.com/NolanCassidy/covid19#readme"
+  "homepage": "https://github.com/NolanCassidy/covid19#readme",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
 }

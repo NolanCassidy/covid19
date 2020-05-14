@@ -51,7 +51,7 @@ function showSingle(){
     const item = clicked.target;
     const index = favorites.indexOf(id);
     // toggle favorite on/off
-    if(index == -1) {
+    if(index === -1) {
       item.className = 'fav';
       favorites.push(id);
     }else{
