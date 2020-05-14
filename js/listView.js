@@ -44,7 +44,6 @@ function showSearch(s) {
       countryName.style.display = "none"
     }
   })
-  return true;
 }
 
 //apply check mark to all favorited countries
@@ -58,5 +57,3 @@ function showAll() {
     }
   });
 }
-
-module.exports = showSearch;

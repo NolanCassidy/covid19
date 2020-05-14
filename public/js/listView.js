@@ -3,11 +3,11 @@
 // loads list view
 function loadListView() {
   //sends request to Coronavirus api for the data
-  var xhr = getData()
+  const xhr = getData()
   xhr.onload = function() {
     //if request successful
     if (this.status == 200) {
-      var response = JSON.parse(this.responseText);
+      const response = JSON.parse(this.responseText);
       ///creates html code for body in index.html
       const listView = `
         <input type="text" onkeyup="showSearch(this)" placeholder="Search..."/>
@@ -49,7 +49,7 @@ function showSearch(s) {
 //apply check mark to all favorited countries
 function showAll() {
   // retrieve local storage
-  var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
   // apply fav class to all favorites
   favorites.forEach(function(favorite) {
     if (document.getElementById(favorite)) {
