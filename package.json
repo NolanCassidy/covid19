@@ -1,0 +1,22 @@
+{
+  "name": "covid19",
+  "version": "1.0.0",
+  "description": "Coronavirus Single Page Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NolanCassidy/covid19.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "Nolan Cassidy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NolanCassidy/covid19/issues"
+  },
+  "homepage": "https://github.com/NolanCassidy/covid19#readme"
+}
