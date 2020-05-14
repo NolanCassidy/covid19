@@ -3,14 +3,12 @@
 // Load favorites view
 function loadFavoriteView() {
   //sends request to Coronavirus  api for the data
-  const xhr = getData()
-  xhr.onload = function() {
-    //if request successful
-    if (this.status == 200) {
-      const response = JSON.parse(this.responseText);
+  CovidAPI.getAll(function(result) {
+      //check if result is valid
+      if(result.Countries){
       //creates html code for body in index.html
       const favoriteView = `
-        ${response.Countries.map(character => `
+        ${result.Countries.map(character => `
           <a onclick="loadSingleView('${character.CountryCode}');">
             <article class="countryItem countryName" >
               <article class="countryView">
@@ -24,23 +22,23 @@ function loadFavoriteView() {
       document.getElementById('body').innerHTML = favoriteView;
       showFavorites();
     }
-  }
-  xhr.send();
+  });
 }
 
 // hide non favorites and apply checkmarks to favorites
 function showFavorites() {
-  // retrieve local storage
-  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
   //hide all countries
   document.querySelectorAll('.countryName').forEach(function(countryName) {
     countryName.style.display = "none";
   })
-  // add class 'fav' to each favorite and show favorites
-  favorites.forEach(function(favorite) {
-    if (document.getElementById(favorite)) {
-      document.getElementById(favorite).className += ' fav';
-      document.getElementById(favorite).parentNode.parentNode.style.display = "block";
-    }
+  // retrieve local storage
+  LocalFavorites.getAll(function(favorites) {
+    // add class 'fav' to each favorite and show favorites
+    favorites.forEach(function(favorite) {
+      if (document.getElementById(favorite)) {
+        document.getElementById(favorite).className += ' fav';
+        document.getElementById(favorite).parentNode.parentNode.style.display = "block";
+      }
+    });
   });
 }

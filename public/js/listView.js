@@ -2,35 +2,30 @@
 
 // loads list view
 function loadListView() {
-  //sends request to Coronavirus api for the data
-  const xhr = getData()
-  xhr.onload = function() {
-    //if request successful
-    if (this.status == 200) {
-      const response = JSON.parse(this.responseText);
-      ///creates html code for body in index.html
-      const listView = `
-        <input type="text" onkeyup="showSearch(this)" placeholder="Search..."/>
-        <br><br>
-        ${response.Countries.map(character => `
-          <a onclick="loadSingleView('${character.CountryCode}');">
-            <article class="countryItem countryName" >
-              <article class="countryView">
-                <country id="${character.Country}">${character.Country}</country>
+  CovidAPI.getAll(function(result) {
+      //check if result is valid
+      if(result.Countries){
+        //creates html code for body in index.html
+        const listView = `
+          <input type="text" onkeyup="showSearch(this)" placeholder="Search..."/>
+          <br><br>
+          ${result.Countries.map(character => `
+            <a onclick="loadSingleView('${character.CountryCode}');">
+              <article class="countryItem countryName" >
+                <article class="countryView">
+                  <country id="${character.Country}">${character.Country}</country>
+                </article>
               </article>
-            </article>
-          </a>
-        `).join('')}
-      `;
-      //initialize body, all/favorite tabs, and add checkmark to favorites
-      document.getElementById('body').innerHTML = listView;
-      document.getElementById('favoriteCountries').addEventListener('click', loadFavoriteView);
-      document.getElementById('allCountries').addEventListener('click', loadListView);
-      showAll();
+            </a>
+          `).join('')}
+        `;
+        //initialize body, all/favorite tabs, and add checkmark to favorites
+        document.getElementById('body').innerHTML = listView;
+        document.getElementById('favoriteCountries').addEventListener('click', loadFavoriteView);
+        document.getElementById('allCountries').addEventListener('click', loadListView);
+        showAll();
     }
-  }
-
-  xhr.send();
+  });
 }
 
 //updates listveiw from search bar
@@ -46,11 +41,17 @@ function showSearch(s) {
   })
 }
 
-//apply check mark to all favorited countries
+//gets all favorites from local storage and apply checkmarks
 function showAll() {
   // retrieve local storage
-  const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-  // apply fav class to all favorites
+  LocalFavorites.getAll(function(favorites) {
+    // apply fav class to all favorites
+    applyFavorites(favorites);
+  });
+}
+
+//apply check mark to all favorited countries
+function applyFavorites(favorites){
   favorites.forEach(function(favorite) {
     if (document.getElementById(favorite)) {
       document.getElementById(favorite).className += ' fav';
