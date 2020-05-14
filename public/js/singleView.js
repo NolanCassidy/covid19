@@ -18,9 +18,9 @@ function loadSingleView(id) {
               <h3>Confirmed: <span>${character.TotalConfirmed}</span></h3>
               <h3>Active: <span>${character.TotalConfirmed-character.TotalRecovered-character.TotalDeaths}</span></h3>
               <h3>Recovered: <span>${character.TotalRecovered}</span></h3>
-              <h3>Recover Rate: <span>%${Math.round(character.TotalRecovered/(character.TotalConfirmed)*100)}</span></h3>
+              <h3>Recover Rate: <span>%${calculateRates(character.TotalRecovered,character.TotalConfirmed)}</span></h3>
               <h3>Deaths: <span>${character.TotalDeaths}</span></h3>
-              <h3>Death Rate: <span>%${Math.round(character.TotalDeaths/(character.TotalConfirmed)*100)}</span></h3>
+              <h3>Death Rate: <span>%${calculateRates(character.TotalDeaths,character.TotalConfirmed)}</span></h3>
             </article>
           `).join('')}
         `;
@@ -58,3 +58,13 @@ function showSingle(){
     });
   });
 }
+
+//calculares death or recover rate
+function calculateRates(num,den){
+  return Math.round(num/den*100);
+}
+
+//only export as module for testing purposes
+try{
+  module.exports = calculateRates;
+}catch(err){}

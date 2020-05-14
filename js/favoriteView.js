@@ -25,6 +25,13 @@ function loadFavoriteView() {
   });
 }
 
+// loads favorites view without calling api for fast loading
+function loadFavorite() {
+  document.getElementById('favoriteCountries').addEventListener('click', loadFavorite);
+  document.getElementById('allCountries').addEventListener('click', loadList);
+  showFavorites();
+}
+
 // hide non favorites and apply checkmarks to favorites
 function showFavorites() {
   //hide all countries
