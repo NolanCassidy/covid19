@@ -21,11 +21,19 @@ function loadListView() {
         `;
         //initialize body, all/favorite tabs, and add checkmark to favorites
         document.getElementById('body').innerHTML = listView;
-        document.getElementById('favoriteCountries').addEventListener('click', loadFavoriteView);
-        document.getElementById('allCountries').addEventListener('click', loadListView);
+        document.getElementById('favoriteCountries').addEventListener('click', loadFavorite);
+        document.getElementById('allCountries').addEventListener('click', loadList);
         showAll();
     }
   });
+}
+
+// loads list view without calling api for fast loading
+function loadList() {
+  document.querySelectorAll('.countryName').forEach(function(countryName) {
+    countryName.style.display = "block";
+  });
+  showAll();
 }
 
 //updates listveiw from search bar

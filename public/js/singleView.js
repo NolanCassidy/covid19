@@ -24,8 +24,10 @@ function loadSingleView(id) {
             </article>
           `).join('')}
         `;
-        //initialize body, goHome button, and add checkmark to favorites
+        //initialize body, goHome/tab button, and add checkmark to favorites
         document.getElementById('body').innerHTML = singleView;
+        document.getElementById('favoriteCountries').addEventListener('click', loadFavoriteView);
+        document.getElementById('allCountries').addEventListener('click', loadListView);
         document.getElementById('goHome').addEventListener('click', loadListView);
         showSingle();
       }
