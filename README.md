@@ -47,10 +47,15 @@ npm test
 ## File Structure
 
 /css and /js - are only used for hosting on my github pages
+
 /examples - videos and gifs of working examples
+
 /public - contains the js and css file for running on local hosting
+
 index.html is main html File
+
 index.js is files used for starting applicaion with npm
+
 test.test.js is the jest testing file
 
 ## Authors
