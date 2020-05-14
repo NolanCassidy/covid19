@@ -4,7 +4,7 @@ Single page Coronavirus tracking application built using vanilla javascript.
 
 [http://nolancassidy.com/covid19](http://nolancassidy.com/covid19)
 
-![Unlocked Demo](flow.gif)
+![Demo](examples/exampleGif.gif)
 
 ## Features
 
