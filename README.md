@@ -34,6 +34,8 @@ npm start
 
 4. Project can now be viewed at http://localhost:8080/
 
+Note: If you do not have node installed the applicaion can still be ran by opening the index.html in your browser.
+
 ## Running the tests
 
 Testing is run using Jest.
