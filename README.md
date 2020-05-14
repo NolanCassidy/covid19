@@ -44,6 +44,8 @@ Testing is run using Jest.
 npm test
 ```
 
+![Test](examples/test.png)
+
 ## File Structure
 
 /css and /js - are only used for hosting on my github pages
